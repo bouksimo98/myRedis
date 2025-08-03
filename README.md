@@ -10,7 +10,7 @@ event loops, the Redis protocol and more.
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to try the challenge.
 
-# Passing the first stage
+# Prerequisites
 
 The entry point for your Redis implementation is in `src/Server.cpp`. Study and
 uncomment the relevant code, and push your changes to pass the first stage:
@@ -22,12 +22,46 @@ git push origin master
 
 That's all!
 
-# Stage 2 & beyond
+Ensure the following are installed:
 
-Note: This section is for stages 2 and beyond.
+1. CMake ≥ 3.16
+1. A C++ compiler (GCC, Clang, or MSVC)
+1. make or ninja
 
-1. Ensure you have `cmake` installed locally
+# Installing vcpkg (if not already installed)
+
+```sh
+# Clone vcpkg
+git clone https://github.com/microsoft/vcpkg.git ~/vcpkg
+
+# Bootstrap vcpkg
+cd ~/vcpkg
+./bootstrap-vcpkg.sh
+```
+
+# Building the Project
+
 1. Run `./your_program.sh` to run your Redis server, which is implemented in
    `src/Server.cpp`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
+
+# Interacting with Your Redis Server
+
+To test with a Redis client (e.g., nc or telnet):
+
+```sh
+nc localhost 6379
+```
+
+Then type:
+
+```
+PING
+```
+
+Expected output:
+
+```
++PONG
+```
